@@ -3,1243 +3,653 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maison Continental — Premium Continental Dining</title>
+  <title>InCLASS Inc. | Support for Homeschool & Digital Learners</title>
+  <meta name="description" content="InCLASS Inc. empowers homeschool and digital learners in grades 6–12 on Florida's Treasure Coast with mentorship, leadership, academic support, service, and real-world readiness." />
   <style>
     :root {
-      --olive: #151a12;
-      --olive-2: #20271a;
-      --cream: #f6ecdd;
-      --cream-2: #fff8ec;
-      --cream-3: #ead8bd;
-      --gold: #d9a24e;
-      --gold-2: #f0c77d;
-      --brown: #3d261c;
-      --brown-2: #6f432b;
-      --muted: #d8c8af;
-      --ink: #171912;
-      --soft: #665139;
-      --line: rgba(154, 101, 43, 0.22);
-      --shadow: 0 28px 80px rgba(35, 22, 10, 0.13);
-      --radius-xl: 44px;
-      --radius-lg: 32px;
-      --radius-md: 22px;
-      --container: 1280px;
+      --navy: #0f172a;
+      --ink: #172033;
+      --muted: #64748b;
+      --cream: #fff7e8;
+      --paper: #ffffff;
+      --sky: #4cc9f0;
+      --blue: #2563eb;
+      --purple: #6d5dfc;
+      --coral: #ff5f6d;
+      --sun: #ffd166;
+      --mint: #49d39f;
+      --soft: #f6f8ff;
+      --line: rgba(15, 23, 42, .1);
+      --shadow: 0 28px 80px rgba(15, 23, 42, .14);
+      --radius: 28px;
+      --radius-lg: 42px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--cream);
       color: var(--ink);
+      background: var(--paper);
       overflow-x: hidden;
-      text-rendering: geometricPrecision;
     }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1160px, calc(100% - 36px)); margin: 0 auto; }
 
-    body::selection {
-      background: var(--gold);
-      color: var(--olive);
+    .announcement {
+      background: var(--navy);
+      color: white;
+      font-weight: 800;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px 16px;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img, svg {
-      display: block;
-      max-width: 100%;
-    }
-
-    .page {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 8% 5%, rgba(217, 162, 78, 0.18), transparent 28rem),
-        radial-gradient(circle at 92% 2%, rgba(111, 67, 43, 0.16), transparent 24rem),
-        linear-gradient(180deg, var(--cream), #f2e4d0 100%);
-    }
-
-    .container {
-      width: min(var(--container), calc(100% - 10vw));
-      margin-inline: auto;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 980px;
-      padding: 32px 0 0;
-      color: var(--cream-2);
-      background:
-        radial-gradient(circle at 72% 22%, rgba(217, 162, 78, 0.18), transparent 25rem),
-        radial-gradient(circle at 15% 12%, rgba(255, 248, 236, 0.06), transparent 22rem),
-        linear-gradient(90deg, var(--olive) 0 62%, var(--brown) 62% 100%);
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 14px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-2), var(--gold));
-    }
+    .announcement span { color: var(--sun); }
 
     .nav {
-      position: relative;
-      z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      min-height: 76px;
-      padding: 0 28px;
-      border: 1px solid rgba(217, 162, 78, 0.42);
-      border-radius: 999px;
-      background: rgba(29, 28, 22, 0.84);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
+      gap: 18px;
     }
-
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 15px;
-      font-weight: 900;
-      letter-spacing: 0.13em;
-      white-space: nowrap;
-    }
-
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border: 1px solid rgba(217, 162, 78, 0.44);
-      border-radius: 50%;
-      color: var(--gold-2);
-      font-size: 13px;
-      letter-spacing: 0.04em;
-    }
-
-    .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(18px, 2.4vw, 34px);
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
+      gap: 12px;
+      font-weight: 950;
+      font-size: 25px;
+      letter-spacing: -.05em;
     }
-
-    .nav-links a {
-      position: relative;
-      padding: 8px 0;
-      transition: color 0.2s ease;
+    .brand-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--purple), var(--sky));
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 16px 34px rgba(109,93,252,.28);
     }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 1px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.24s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--cream-2);
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a:focus-visible::after {
-      transform: scaleX(1);
-    }
+    .links { display: flex; align-items: center; gap: 24px; font-size: 14px; font-weight: 850; color: var(--muted); }
+    .actions { display: flex; align-items: center; gap: 10px; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 0 26px;
-      border: 0;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 22px;
       border-radius: 999px;
-      font: inherit;
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
+      font-weight: 950;
+      transition: .25s ease;
+      border: 0;
       cursor: pointer;
-      transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease, border-color 0.24s ease;
+      white-space: nowrap;
     }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(15,23,42,.16); }
+    .btn-primary { background: var(--blue); color: white; }
+    .btn-sun { background: var(--sun); color: var(--navy); }
+    .btn-ghost { background: white; color: var(--navy); border: 1px solid var(--line); }
+    .btn-coral { background: var(--coral); color: white; }
 
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px);
+    .hero {
+      position: relative;
+      padding: 84px 0 92px;
+      background:
+        radial-gradient(circle at 10% 8%, rgba(255,209,102,.55), transparent 28%),
+        radial-gradient(circle at 92% 8%, rgba(76,201,240,.36), transparent 32%),
+        linear-gradient(180deg, #fbfdff, #fff7e8);
+      overflow: hidden;
     }
-
-    .btn:focus-visible,
-    a:focus-visible {
-      outline: 3px solid rgba(240, 199, 125, 0.5);
-      outline-offset: 4px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: rgba(109,93,252,.08);
+      right: -190px;
+      bottom: -260px;
     }
-
-    .btn.gold {
-      background: var(--gold);
-      color: var(--olive);
-      box-shadow: 0 18px 45px rgba(217, 162, 78, 0.25);
-    }
-
-    .btn.gold:hover,
-    .btn.gold:focus-visible {
-      background: var(--gold-2);
-    }
-
-    .btn.cream {
-      background: var(--cream-2);
-      color: var(--olive);
-      box-shadow: 0 18px 45px rgba(255, 248, 236, 0.16);
-    }
-
-    .btn.outline {
-      border: 1px solid rgba(255, 248, 236, 0.26);
-      color: var(--cream-2);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
     .hero-grid {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
-      gap: clamp(44px, 5vw, 76px);
+      grid-template-columns: 1fr .92fr;
+      gap: 56px;
       align-items: center;
-      padding: 92px 0 118px;
     }
-
     .eyebrow {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
-      margin: 0 0 24px;
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
+      gap: 8px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: rgba(37,99,235,.09);
+      font-size: 14px;
+      font-weight: 950;
     }
-
-    .eyebrow::before {
-      content: "";
-      width: 44px;
-      height: 1px;
-      flex: 0 0 44px;
-      background: currentColor;
-    }
-
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
-
     h1 {
-      max-width: 720px;
-      margin-bottom: 0;
-      font-size: clamp(56px, 6.1vw, 88px);
-      line-height: 0.96;
-      letter-spacing: -0.065em;
+      margin-top: 20px;
+      max-width: 760px;
+      font-size: clamp(48px, 7.3vw, 88px);
+      line-height: .93;
+      letter-spacing: -.08em;
+      font-weight: 950;
+      color: var(--navy);
     }
-
-    h2 {
-      margin-bottom: 0;
-      font-size: clamp(42px, 4.3vw, 62px);
-      line-height: 1.04;
-      letter-spacing: -0.055em;
-    }
-
-    h3 {
-      letter-spacing: -0.04em;
-    }
-
+    h1 span { color: var(--purple); }
     .hero-copy {
-      max-width: 600px;
-      margin: 32px 0 38px;
+      margin-top: 24px;
+      max-width: 650px;
       color: var(--muted);
-      font-size: clamp(18px, 1.5vw, 21px);
+      font-size: clamp(18px, 2vw, 22px);
       line-height: 1.65;
     }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .proof-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .chip {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(15,23,42,.08);
+      padding: 11px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 850;
+      color: var(--muted);
+      box-shadow: 0 12px 30px rgba(15,23,42,.06);
     }
 
-    .hero-meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      max-width: 560px;
-      margin-top: 58px;
-    }
-
-    .meta-card {
-      padding: 22px;
-      border: 1px solid rgba(255, 248, 236, 0.14);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .meta-card span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .meta-card strong {
-      font-size: 18px;
-      line-height: 1.35;
-    }
-
-    .visual-stack {
+    .hero-card {
       position: relative;
-      min-height: 690px;
-    }
-
-    .food-card {
-      position: absolute;
-      inset: 0 0 auto auto;
-      width: min(100%, 560px);
-      height: 690px;
-      border-radius: var(--radius-xl);
+      min-height: 565px;
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
       overflow: hidden;
-      background:
-        radial-gradient(circle at 48% 34%, #f8e4c5 0 15%, transparent 16%),
-        radial-gradient(circle at 50% 37%, var(--gold) 0 8%, transparent 9%),
-        radial-gradient(circle at 58% 39%, #27351f 0 3%, transparent 4%),
-        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.13), transparent 20rem),
-        linear-gradient(145deg, #70442d, #241812);
-      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.38);
-      transform: rotate(2deg);
+      color: white;
     }
-
-    .food-card::before {
-      content: "";
-      position: absolute;
-      inset: 26px;
-      border: 1px solid rgba(255, 248, 236, 0.14);
-      border-radius: 34px;
-      pointer-events: none;
-    }
-
-    .food-card::after {
+    .hero-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.46));
-      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(76,201,240,.45), transparent 30%),
+        radial-gradient(circle at 82% 70%, rgba(255,95,109,.38), transparent 30%);
+      opacity: .9;
     }
-
-    .food-label {
-      position: absolute;
-      z-index: 1;
-      left: 40px;
-      right: 40px;
-      bottom: 42px;
-    }
-
-    .food-label h3 {
-      margin-bottom: 8px;
-      font-size: 30px;
-    }
-
-    .food-label p {
-      margin-bottom: 0;
-      color: #ead8b9;
-      line-height: 1.5;
-    }
-
-    .rating-card {
-      position: absolute;
-      left: -26px;
-      bottom: 44px;
+    .floating-note {
+      position: relative;
       z-index: 2;
-      width: 310px;
-      padding: 28px;
-      border-radius: 30px;
-      background: var(--cream-2);
-      color: var(--olive);
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
-    }
-
-    .rating-card strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 34px;
-      letter-spacing: -0.04em;
-    }
-
-    .rating-card p {
-      margin-bottom: 0;
-      color: #705b40;
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    .reservation-card {
-      position: absolute;
-      right: 32px;
-      bottom: -40px;
-      z-index: 3;
-      width: 340px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(15px);
+      border-radius: 26px;
       padding: 22px;
-      border: 1px solid rgba(154, 101, 43, 0.2);
-      border-radius: 28px;
-      background: rgba(255, 248, 236, 0.96);
-      color: var(--olive);
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
+      margin-bottom: 16px;
+      animation: float 4s ease-in-out infinite;
     }
-
-    .reservation-card span {
-      display: block;
-      margin-bottom: 10px;
-      color: #9a652b;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .reservation-card p {
-      margin-bottom: 18px;
-      color: var(--soft);
-      line-height: 1.55;
-    }
-
-    .time-slots {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .time-slots b {
-      display: grid;
-      place-items: center;
-      min-height: 34px;
-      border-radius: 999px;
-      background: #f1dfc4;
-      color: #6e4d2c;
-      font-size: 12px;
-    }
-
-    .time-slots b:nth-child(2) {
-      background: var(--olive);
-      color: var(--cream-2);
-    }
-
-    .strip {
-      padding: 34px 0;
-      border-bottom: 1px solid rgba(102, 81, 57, 0.16);
-      background: var(--cream);
-      color: #8c612c;
-      font-weight: 900;
-      letter-spacing: 0.17em;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-
-    .strip span {
-      display: inline-block;
-      min-width: max-content;
-      padding-left: 5vw;
-      animation: drift 26s linear infinite;
-    }
-
-    @keyframes drift {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    section {
-      padding: 110px 0;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.7fr);
-      gap: 60px;
-      align-items: end;
-      margin-bottom: 54px;
-    }
-
-    .section-copy {
-      margin-bottom: 0;
-      color: var(--soft);
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
-    }
-
-    .dish {
-      padding: 22px 22px 28px;
-      border: 1px solid var(--line);
-      border-radius: 38px;
-      background: var(--cream-2);
-      box-shadow: var(--shadow);
-      transition: transform 0.24s ease, box-shadow 0.24s ease;
-    }
-
-    .dish:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 34px 90px rgba(35, 22, 10, 0.16);
-    }
-
-    .dish-visual {
-      position: relative;
-      height: 260px;
-      margin-bottom: 28px;
-      border-radius: 28px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 42%, #f8e4c5 0 22%, transparent 23%),
-        radial-gradient(circle at 52% 45%, var(--gold) 0 10%, transparent 11%),
-        radial-gradient(circle at 57% 47%, #25351f 0 4%, transparent 5%),
-        linear-gradient(135deg, var(--dish-bg), #20140f);
-    }
-
-    .dish-visual::after {
-      content: "";
+    .floating-note:nth-child(2) { margin-left: 70px; animation-delay: .35s; }
+    .floating-note:nth-child(3) { margin-right: 52px; animation-delay: .7s; }
+    .floating-note strong { display: block; font-size: 20px; margin-bottom: 7px; }
+    .floating-note p { color: rgba(255,255,255,.76); line-height: 1.52; }
+    .hero-card-bottom {
       position: absolute;
-      inset: 16px;
-      border: 1px solid rgba(255, 248, 236, 0.12);
-      border-radius: 20px;
-    }
-
-    .dish small {
-      color: #9a652b;
-      font-weight: 900;
-      letter-spacing: 0.17em;
-    }
-
-    .dish h3 {
-      margin: 18px 0 10px;
-      font-size: 25px;
-    }
-
-    .dish p {
-      margin-bottom: 28px;
-      color: #6d5840;
-      line-height: 1.6;
-    }
-
-    .dish-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding-top: 22px;
-      border-top: 1px solid #e6d4b8;
-    }
-
-    .dish-footer strong {
-      color: #9a652b;
-      font-size: 24px;
-    }
-
-    .dish-footer span {
-      color: #7a6247;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .story-wrap {
-      max-width: none;
-      padding: 0;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(217, 162, 78, 0.16), transparent 24rem),
-        var(--olive);
-      color: var(--cream-2);
-    }
-
-    .story-inner {
-      display: grid;
-      grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1fr);
-      gap: 84px;
-      align-items: center;
-      padding: 110px 0;
-    }
-
-    .interior {
-      position: relative;
-      min-height: 520px;
-      border-radius: 42px;
-      background:
-        linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.38)),
-        radial-gradient(circle at 50% 42%, #f8e4c5 0 21%, transparent 22%),
-        radial-gradient(circle at 54% 46%, var(--gold) 0 10%, transparent 11%),
-        radial-gradient(circle at 16% 12%, rgba(255, 248, 236, 0.14), transparent 16rem),
-        linear-gradient(135deg, #5a3928, #221611);
-      overflow: hidden;
-      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.33);
-    }
-
-    .interior::before {
-      content: "";
-      position: absolute;
-      inset: 24px;
-      border: 1px solid rgba(255, 248, 236, 0.14);
-      border-radius: 32px;
-    }
-
-    .interior::after {
-      content: "Warm dining room atmosphere";
-      position: absolute;
-      left: 34px;
-      bottom: 34px;
-      color: var(--cream-2);
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-
-    .story-inner .section-copy {
-      color: var(--muted);
-      margin: 28px 0 32px;
-    }
-
-    .proof-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 36px;
-    }
-
-    .proof {
-      padding: 20px;
-      border: 1px solid rgba(255, 248, 236, 0.12);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .proof strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--gold-2);
-      font-size: 26px;
-      letter-spacing: -0.04em;
-    }
-
-    .proof span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    .detail-section {
-      display: grid;
-      grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1fr);
-      gap: 80px;
-      align-items: center;
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .detail {
-      min-height: 215px;
-      padding: 28px;
-      border: 1px solid rgba(154, 101, 43, 0.18);
-      border-radius: 32px;
-      background: var(--cream-2);
-      box-shadow: 0 22px 60px rgba(40, 25, 12, 0.07);
-      transition: transform 0.24s ease;
-    }
-
-    .detail:hover {
-      transform: translateY(-4px);
-    }
-
-    .detail.dark {
-      background: var(--olive);
-      color: var(--cream-2);
-    }
-
-    .icon {
-      width: 54px;
-      height: 54px;
-      margin-bottom: 24px;
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.42), transparent 35%),
-        #f0d9b4;
-    }
-
-    .detail.dark .icon {
-      background:
-        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.42), transparent 35%),
-        var(--gold);
-    }
-
-    .detail h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-    }
-
-    .detail p {
-      margin-bottom: 0;
-      color: #6d5840;
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .detail.dark p {
-      color: var(--muted);
-    }
-
-    .events-section {
-      padding-top: 0;
-    }
-
-    .events-card {
+      z-index: 2;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 54px;
+      gap: 12px;
+    }
+    .metric {
+      background: white;
+      color: var(--navy);
+      border-radius: 24px;
+      padding: 18px;
+    }
+    .metric b { display: block; font-size: 26px; line-height: 1; }
+    .metric span { display: block; margin-top: 6px; color: var(--muted); font-weight: 800; font-size: 13px; }
+
+    section { padding: 92px 0; }
+    .soft { background: var(--soft); }
+    .section-head { max-width: 790px; margin: 0 auto 48px; text-align: center; }
+    .section-head h2 { margin-top: 16px; font-size: clamp(34px, 4.8vw, 60px); line-height: 1.02; letter-spacing: -.065em; color: var(--navy); }
+    .section-head p { margin-top: 18px; color: var(--muted); font-size: 18px; line-height: 1.7; }
+
+    .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .audience-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      min-height: 310px;
+      box-shadow: 0 18px 46px rgba(15,23,42,.06);
+      transition: .25s ease;
+    }
+    .audience-card:hover { transform: translateY(-7px); }
+    .audience-card .emoji { font-size: 42px; margin-bottom: 18px; }
+    .audience-card h3 { color: var(--navy); font-size: 25px; line-height: 1.1; letter-spacing: -.035em; }
+    .audience-card p { margin-top: 14px; color: var(--muted); line-height: 1.65; }
+    .audience-card ul { list-style: none; display: grid; gap: 10px; margin-top: 20px; color: var(--ink); font-weight: 750; }
+
+    .journey {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 42px;
       align-items: center;
-      padding: 54px;
-      border: 1px solid rgba(154, 101, 43, 0.18);
-      border-radius: var(--radius-xl);
-      background: var(--cream-2);
+    }
+    .journey-panel {
+      background: linear-gradient(135deg, var(--navy), #27375c);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 40px;
       box-shadow: var(--shadow);
     }
-
-    .events-list {
+    .journey-panel h2 { font-size: clamp(34px, 4vw, 54px); letter-spacing: -.06em; line-height: 1.04; }
+    .journey-panel p { margin-top: 18px; color: rgba(255,255,255,.76); line-height: 1.72; font-size: 18px; }
+    .steps { display: grid; gap: 16px; }
+    .step {
       display: grid;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .events-list span {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--soft);
-      font-weight: 700;
-    }
-
-    .events-list span::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 6px rgba(217, 162, 78, 0.14);
-    }
-
-    .events-visual {
-      min-height: 360px;
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 48% 42%, #f8e4c5 0 18%, transparent 19%),
-        radial-gradient(circle at 52% 44%, var(--gold) 0 8%, transparent 9%),
-        linear-gradient(135deg, #26351f, #5f3927);
-    }
-
-    .cta {
-      padding: 0 0 90px;
-    }
-
-    .cta-box {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
-      gap: 48px;
-      align-items: center;
-      padding: 56px;
-      border-radius: 46px;
-      background:
-        radial-gradient(circle at 85% 0%, rgba(217, 162, 78, 0.22), transparent 22rem),
-        var(--olive);
-      color: var(--cream-2);
-      box-shadow: 0 36px 90px rgba(23, 27, 19, 0.18);
-    }
-
-    .cta p {
-      max-width: 570px;
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.65;
-    }
-
-    .reserve-panel {
-      display: grid;
-      gap: 12px;
+      grid-template-columns: 64px 1fr;
+      gap: 16px;
+      align-items: start;
+      background: white;
+      border-radius: 26px;
       padding: 22px;
-      border-radius: 30px;
-      background: var(--cream-2);
-      color: var(--olive);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 40px rgba(15,23,42,.06);
     }
-
-    .reserve-field {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 48px;
-      padding: 0 16px;
+    .step-num {
+      width: 58px;
+      height: 58px;
       border-radius: 18px;
-      background: #f2e2c9;
-      color: var(--soft);
-      font-size: 14px;
-      font-weight: 800;
+      display: grid;
+      place-items: center;
+      background: var(--sun);
+      color: var(--navy);
+      font-weight: 950;
+      font-size: 22px;
     }
+    .step h3 { color: var(--navy); font-size: 20px; margin-bottom: 6px; }
+    .step p { color: var(--muted); line-height: 1.6; }
 
-    .reserve-field strong {
-      color: var(--olive);
+    .class-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .class-card {
+      background: white;
+      border-radius: 28px;
+      padding: 26px 20px;
+      text-align: center;
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 40px rgba(15,23,42,.06);
+      transition: .25s ease;
+      position: relative;
+      overflow: hidden;
     }
+    .class-card:hover { transform: translateY(-9px); }
+    .class-card::after { content: ""; position: absolute; inset: auto 0 0; height: 7px; background: var(--blue); }
+    .class-card:nth-child(2)::after { background: var(--purple); }
+    .class-card:nth-child(3)::after { background: var(--coral); }
+    .class-card:nth-child(4)::after { background: var(--sun); }
+    .class-card:nth-child(5)::after { background: var(--mint); }
+    .letter { font-size: 54px; line-height: 1; font-weight: 950; color: var(--blue); }
+    .class-card:nth-child(2) .letter { color: var(--purple); }
+    .class-card:nth-child(3) .letter { color: var(--coral); }
+    .class-card:nth-child(4) .letter { color: #df9a00; }
+    .class-card:nth-child(5) .letter { color: var(--mint); }
+    .class-card h3 { margin-top: 12px; color: var(--navy); font-size: 19px; }
+    .class-card p { margin-top: 10px; color: var(--muted); line-height: 1.55; font-size: 14px; }
 
-    .footer {
-      padding: 34px 0 48px;
-      color: var(--soft);
-      border-top: 1px solid rgba(102, 81, 57, 0.16);
+    .program-strip {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
     }
-
-    .footer-inner {
+    .program-copy { padding: 42px; }
+    .program-copy h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.04; letter-spacing: -.06em; color: var(--navy); }
+    .program-copy p { margin-top: 18px; color: var(--muted); line-height: 1.7; font-size: 18px; }
+    .program-list { display: grid; gap: 12px; margin-top: 26px; }
+    .program-list div { background: var(--soft); border-radius: 18px; padding: 14px 16px; font-weight: 850; color: var(--navy); }
+    .program-side {
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: white;
+      padding: 42px;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+    .program-side h3 { font-size: 31px; line-height: 1.08; letter-spacing: -.04em; }
+    .program-side p { color: rgba(255,255,255,.78); line-height: 1.65; }
+
+    .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .impact-card { background: white; border: 1px solid var(--line); border-radius: 26px; padding: 24px; box-shadow: 0 16px 40px rgba(15,23,42,.06); }
+    .impact-card b { display: block; font-size: 30px; color: var(--navy); margin-bottom: 8px; }
+    .impact-card span { color: var(--muted); line-height: 1.5; font-weight: 700; }
+
+    .donate-band {
+      background:
+        radial-gradient(circle at 90% 12%, rgba(255,209,102,.56), transparent 28%),
+        linear-gradient(135deg, var(--navy), #2b3970);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow);
+    }
+    .donate-band h2 { font-size: clamp(34px, 4.4vw, 58px); line-height: 1.02; letter-spacing: -.065em; }
+    .donate-band > p { margin-top: 17px; max-width: 780px; color: rgba(255,255,255,.76); line-height: 1.7; font-size: 18px; }
+    .donation-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 34px 0; }
+    .donation-option { border-radius: 26px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); padding: 24px; }
+    .donation-option b { display: block; font-size: 38px; margin-bottom: 8px; color: var(--sun); }
+    .donation-option p { color: rgba(255,255,255,.78); line-height: 1.55; }
+
+    .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .partner-card { border-radius: var(--radius-lg); padding: 38px; box-shadow: 0 18px 46px rgba(15,23,42,.07); border: 1px solid var(--line); }
+    .partner-card h3 { color: var(--navy); font-size: 34px; line-height: 1.08; letter-spacing: -.05em; }
+    .partner-card p { margin-top: 15px; color: var(--muted); line-height: 1.7; }
+    .partner-card .btn { margin-top: 24px; }
+    .partner-card:first-child { background: #fff5d6; }
+    .partner-card:last-child { background: #eff6ff; }
+
+    .newsletter { background: var(--cream); }
+    .newsletter-box {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 60px rgba(15,23,42,.08);
+      padding: 42px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 30px;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      font-size: 14px;
     }
+    .newsletter-box h2 { color: var(--navy); font-size: clamp(30px, 4vw, 48px); line-height: 1.05; letter-spacing: -.055em; }
+    .newsletter-box p { margin-top: 14px; color: var(--muted); line-height: 1.7; }
+    .form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    input { width: 100%; min-height: 52px; border: 1px solid var(--line); border-radius: 16px; padding: 0 16px; font: inherit; }
+    .form .wide { grid-column: 1 / -1; }
+    .form button { grid-column: 1 / -1; }
 
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      font-weight: 700;
+    footer { background: var(--navy); color: white; padding: 48px 0; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+    footer p { color: rgba(255,255,255,.66); line-height: 1.6; }
+    .contact { text-align: right; font-weight: 800; color: rgba(255,255,255,.82); }
+
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+    @media (max-width: 980px) {
+      .links { display: none; }
+      .hero-grid, .journey, .program-strip, .newsletter-box, .footer-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .class-grid { grid-template-columns: repeat(2, 1fr); }
+      .impact-grid, .donation-options, .partner-grid { grid-template-columns: 1fr 1fr; }
+      .contact { text-align: left; }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-      }
-    }
-
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .section-head,
-      .story-inner,
-      .detail-section,
-      .events-card,
-      .cta-box {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        background:
-          radial-gradient(circle at 70% 18%, rgba(217, 162, 78, 0.18), transparent 24rem),
-          linear-gradient(180deg, var(--olive) 0 68%, var(--brown) 68% 100%);
-      }
-
-      .visual-stack {
-        min-height: 700px;
-      }
-
-      .food-card {
-        left: 0;
-        right: auto;
-        width: min(100%, 620px);
-      }
-
-      .reservation-card {
-        right: 24px;
-      }
-
-      .menu-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .dish {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: 28px;
-        align-items: center;
-      }
-
-      .dish-visual {
-        margin-bottom: 0;
-      }
-
-      .dish-footer {
-        margin-top: 20px;
-      }
-    }
-
-    @media (max-width: 780px) {
-      .container {
-        width: min(100% - 40px, var(--container));
-      }
-
-      .hero {
-        padding-top: 20px;
-      }
-
-      .nav {
-        min-height: auto;
-        padding: 18px;
-        border-radius: 28px;
-      }
-
-      .brand {
-        font-size: 12px;
-      }
-
-      .brand-mark {
-        width: 34px;
-        height: 34px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-grid {
-        padding: 76px 0 100px;
-      }
-
-      h1 {
-        font-size: clamp(46px, 14vw, 66px);
-      }
-
-      h2 {
-        font-size: clamp(36px, 10vw, 50px);
-      }
-
-      .hero-meta,
-      .details-grid,
-      .proof-row {
-        grid-template-columns: 1fr;
-      }
-
-      .visual-stack {
-        min-height: 610px;
-      }
-
-      .food-card {
-        position: relative;
-        height: 540px;
-        transform: none;
-      }
-
-      .rating-card,
-      .reservation-card {
-        position: relative;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        width: 100%;
-        margin-top: 18px;
-      }
-
-      section,
-      .story-inner {
-        padding: 82px 0;
-      }
-
-      .section-head {
-        gap: 28px;
-      }
-
-      .dish {
-        display: block;
-      }
-
-      .dish-visual {
-        margin-bottom: 28px;
-      }
-
-      .events-card,
-      .cta-box {
-        padding: 32px;
-        border-radius: 34px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 460px) {
-      .container {
-        width: min(100% - 28px, var(--container));
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .food-card {
-        height: 460px;
-        border-radius: 32px;
-      }
-
-      .food-label {
-        left: 24px;
-        right: 24px;
-        bottom: 28px;
-      }
-
-      .food-label h3 {
-        font-size: 24px;
-      }
-
-      .strip {
-        font-size: 13px;
-      }
-
-      .events-visual {
-        min-height: 280px;
-      }
+    @media (max-width: 640px) {
+      .actions .btn-ghost { display: none; }
+      .nav-inner { height: auto; padding: 14px 0; align-items: flex-start; }
+      .brand { font-size: 22px; }
+      .actions { width: 100%; justify-content: flex-end; }
+      .hero { padding-top: 56px; }
+      .hero-actions .btn { width: 100%; }
+      .hero-card { min-height: auto; }
+      .floating-note:nth-child(2), .floating-note:nth-child(3) { margin-left: 0; margin-right: 0; }
+      .hero-card-bottom { position: relative; left: auto; right: auto; bottom: auto; margin-top: 18px; grid-template-columns: 1fr; }
+      .class-grid, .impact-grid, .donation-options, .partner-grid { grid-template-columns: 1fr; }
+      .program-copy, .program-side, .donate-band, .partner-card, .newsletter-box, .journey-panel { padding: 28px; border-radius: 30px; }
+      .form { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <header class="hero" id="top">
-      <div class="container">
-        <nav class="nav" aria-label="Primary navigation">
-          <a class="brand" href="#top" aria-label="Maison Continental home">
-            <span class="brand-mark">MC</span>
-            <span>MAISON CONTINENTAL</span>
-          </a>
-          <div class="nav-links">
-            <a href="#menu">Menu</a>
-            <a href="#story">Story</a>
-            <a href="#dining">Dining</a>
-            <a href="#events">Events</a>
-            <a href="#reserve">Reserve</a>
-          </div>
-          <a class="btn gold" href="#reserve">Reserve</a>
-        </nav>
+  <div class="announcement">📚 Community Book Drive for Teens — donations accepted through July 31. <span>Help put great books into local students’ hands.</span></div>
 
-        <div class="hero-grid">
-          <div>
-            <p class="eyebrow">Fine continental dining</p>
-            <h1>Elegant European flavors for golden hour dining.</h1>
-            <p class="hero-copy">A premium continental restaurant experience with classic technique, warm service, refined plating, and an atmosphere made for memorable evenings.</p>
-            <div class="hero-actions">
-              <a class="btn cream" href="#reserve">Book a Table</a>
-              <a class="btn outline" href="#menu">Explore Menu</a>
-            </div>
-            <div class="hero-meta" aria-label="Restaurant highlights">
-              <div class="meta-card">
-                <span>Open Daily</span>
-                <strong>12:00 PM — 11:30 PM</strong>
-              </div>
-              <div class="meta-card">
-                <span>Signature</span>
-                <strong>Truffle Steak · Herb Risotto</strong>
-              </div>
-            </div>
-          </div>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="InCLASS home"><span class="brand-badge">IC</span> InCLASS</a>
+      <div class="links" aria-label="Main navigation">
+        <a href="#programs">Programs</a>
+        <a href="#class">CLASS Framework</a>
+        <a href="#impact">Impact</a>
+        <a href="#partners">Partners</a>
+      </div>
+      <div class="actions">
+        <a class="btn btn-ghost" href="#donate">Donate</a>
+        <a class="btn btn-primary" href="#enroll">Enroll</a>
+      </div>
+    </div>
+  </nav>
 
-          <div class="visual-stack" aria-label="Featured restaurant dish and booking information">
-            <div class="food-card" role="img" aria-label="Signature truffle steak plated in a premium continental restaurant style">
-              <div class="food-label">
-                <h3>Signature Truffle Steak</h3>
-                <p>herb jus · potato fondant · seasonal greens</p>
-              </div>
-            </div>
-            <div class="rating-card">
-              <strong>4.9 / 5</strong>
-              <p>Guest-loved ambiance, cellar pairings, and continental classics.</p>
-            </div>
-            <div class="reservation-card">
-              <span>Tonight’s tables</span>
-              <p>Chef’s tasting and cellar pairing available for select reservations.</p>
-              <div class="time-slots" aria-label="Available reservation times">
-                <b>7:00</b>
-                <b>8:30</b>
-                <b>9:45</b>
-              </div>
-            </div>
-          </div>
+  <header id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">✨ Grades 6–12 • Treasure Coast, Florida</span>
+        <h1>Homeschool & digital learners deserve a <span>real community.</span></h1>
+        <p class="hero-copy">InCLASS helps students build confidence, friendships, leadership, academic habits, service experience, and real-world readiness beyond the screen.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#enroll">🎓 Enroll in a Program</a>
+          <a class="btn btn-sun" href="#donate">💛 Fund a Student</a>
+          <a class="btn btn-ghost" href="#partners">🤝 Partner With Us</a>
+        </div>
+        <div class="proof-strip">
+          <span class="chip">Career Readiness</span>
+          <span class="chip">Leadership</span>
+          <span class="chip">Academic Support</span>
+          <span class="chip">Service Learning</span>
+          <span class="chip">Mentorship</span>
         </div>
       </div>
-    </header>
 
-    <div class="strip" aria-hidden="true">
-      <span>SEASONAL MENU • FIRE-KISSED STEAKS • HANDMADE PASTA • CURATED EUROPEAN WINES • PRIVATE DINING • SEASONAL MENU • FIRE-KISSED STEAKS • HANDMADE PASTA • CURATED EUROPEAN WINES • PRIVATE DINING •</span>
+      <div class="hero-card" aria-label="Student needs InCLASS supports">
+        <div class="floating-note">
+          <strong>“I’m learning… but I feel alone.”</strong>
+          <p>Many alternative learners need peer interaction, structure, and guidance to grow socially and emotionally.</p>
+        </div>
+        <div class="floating-note">
+          <strong>“I want real-life skills.”</strong>
+          <p>Students explore communication, teamwork, time management, career options, and confidence-building habits.</p>
+        </div>
+        <div class="floating-note">
+          <strong>“I need a place to belong.”</strong>
+          <p>Workshops, service days, book drives, and mentorship create connection beyond traditional classrooms.</p>
+        </div>
+        <div class="hero-card-bottom">
+          <div class="metric"><b>6–12</b><span>Grades served</span></div>
+          <div class="metric"><b>5</b><span>Core CLASS pillars</span></div>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <section id="menu">
+  <main>
+    <section class="soft" id="programs">
       <div class="container">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Chef’s selection</p>
-            <h2>Classic dishes, modern presentation.</h2>
-          </div>
-          <p class="section-copy">A concise seasonal menu built around European comfort, polished sauces, aromatic herbs, and richly composed plates.</p>
+          <span class="eyebrow">Who this is for</span>
+          <h2>A better support system for students, parents, and the community.</h2>
+          <p>The homepage should quickly split the journey: parents need trust, students need energy, and donors need to see real impact.</p>
         </div>
-
-        <div class="menu-grid">
-          <article class="dish" style="--dish-bg:#5E3824">
-            <div class="dish-visual" role="img" aria-label="Herb crusted lamb visual"></div>
-            <div>
-              <small>01</small>
-              <h3>Herb-Crusted Lamb</h3>
-              <p>rosemary jus · potato fondant · market greens</p>
-              <div class="dish-footer"><strong>$34</strong><span>Signature Plate</span></div>
-            </div>
+        <div class="audience-grid">
+          <article class="audience-card">
+            <div class="emoji">🧑‍🎓</div>
+            <h3>For Students</h3>
+            <p>Build confidence, make meaningful connections, explore careers, lead projects, and learn life skills that matter beyond schoolwork.</p>
+            <ul>
+              <li>✓ Virtual workshops</li>
+              <li>✓ Teen meetups</li>
+              <li>✓ Leadership opportunities</li>
+            </ul>
           </article>
-          <article class="dish" style="--dish-bg:#26351F">
-            <div class="dish-visual" role="img" aria-label="Wild mushroom risotto visual"></div>
-            <div>
-              <small>02</small>
-              <h3>Wild Mushroom Risotto</h3>
-              <p>parmigiano · truffle · crisp sage</p>
-              <div class="dish-footer"><strong>$26</strong><span>Signature Plate</span></div>
-            </div>
+          <article class="audience-card">
+            <div class="emoji">👨‍👩‍👧</div>
+            <h3>For Parents</h3>
+            <p>A safe, structured way to help your teen grow socially, emotionally, academically, and practically while learning outside the traditional classroom.</p>
+            <ul>
+              <li>✓ Academic coaching</li>
+              <li>✓ Study skills support</li>
+              <li>✓ Mentorship pathways</li>
+            </ul>
           </article>
-          <article class="dish" style="--dish-bg:#67372A">
-            <div class="dish-visual" role="img" aria-label="Salmon beurre blanc visual"></div>
-            <div>
-              <small>03</small>
-              <h3>Salmon Beurre Blanc</h3>
-              <p>asparagus · lemon butter · dill oil</p>
-              <div class="dish-footer"><strong>$29</strong><span>Signature Plate</span></div>
-            </div>
+          <article class="audience-card">
+            <div class="emoji">💛</div>
+            <h3>For Donors</h3>
+            <p>Your support helps create access to workshops, mentorship, learning resources, service projects, and opportunities for local teens.</p>
+            <ul>
+              <li>✓ Fund student access</li>
+              <li>✓ Support book drives</li>
+              <li>✓ Build future leaders</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="story-wrap" id="story">
+    <section>
+      <div class="container journey">
+        <div class="journey-panel">
+          <span class="eyebrow" style="background:rgba(255,255,255,.12); color:white;">The core message</span>
+          <h2>Online learning can teach. Community helps students thrive.</h2>
+          <p>InCLASS is not just a tutoring site. It is a growth environment for students who need confidence, peer connection, purpose, and readiness for life beyond the classroom.</p>
+          <div class="hero-actions">
+            <a class="btn btn-sun" href="#enroll">Start With Workshops</a>
+            <a class="btn btn-coral" href="#donate">Support Access</a>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div><h3>Meet students where they are</h3><p>Serve homeschool and digital learners who need peer interaction, guidance, and structure.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div><h3>Build confidence through experience</h3><p>Use workshops, service learning, community projects, and mentorship to move students from passive learning to active growth.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div><h3>Turn support into future readiness</h3><p>Help teens practice communication, leadership, financial literacy, career exploration, and decision-making.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="class">
       <div class="container">
-        <div class="story-inner">
-          <div class="interior" role="img" aria-label="Warm candlelit restaurant interior"></div>
-          <div>
-            <p class="eyebrow">The room</p>
-            <h2>Candlelight, linen, oak, and a slower rhythm.</h2>
-            <p class="section-copy">Designed for intimate dinners, celebrations, and long conversations — with amber lighting, deep olive tones, brass details, and attentive service.</p>
-            <a class="btn gold" href="#events">Private Dining</a>
-            <div class="proof-row" aria-label="Restaurant proof points">
-              <div class="proof"><strong>12+</strong><span>continental signatures</span></div>
-              <div class="proof"><strong>40</strong><span>curated cellar labels</span></div>
-              <div class="proof"><strong>4.9</strong><span>average guest rating</span></div>
-            </div>
-          </div>
+        <div class="section-head">
+          <span class="eyebrow">The CLASS Framework</span>
+          <h2>Five pillars. One whole-student support system.</h2>
+          <p>This section should be colorful, scannable, and ad-friendly because it naturally includes the keywords Google needs: career readiness, leadership, academic support, service, and mentorship.</p>
+        </div>
+        <div class="class-grid">
+          <article class="class-card"><div class="letter">C</div><h3>Career Readiness</h3><p>Communication, teamwork, time management, financial literacy, career pathways, resumes, and interviews.</p></article>
+          <article class="class-card"><div class="letter">L</div><h3>Leadership</h3><p>Student voice, youth advisory roles, workshops, retreats, goal-setting, civic engagement, and leadership portfolios.</p></article>
+          <article class="class-card"><div class="letter">A</div><h3>Academics</h3><p>Study skills, tutoring, academic coaching, test prep, college and scholarship support, and learning habits.</p></article>
+          <article class="class-card"><div class="letter">S</div><h3>Service</h3><p>Student-led service projects, local partnerships, empathy-building, community contribution, and youth showcases.</p></article>
+          <article class="class-card"><div class="letter">S</div><h3>Support</h3><p>Peer mentorship, adult mentorship, family engagement, wellness activities, and transition support.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="dining">
-      <div class="container detail-section">
+    <section id="enroll">
+      <div class="container program-strip">
+        <div class="program-copy">
+          <span class="eyebrow">Current growth opportunities</span>
+          <h2>Programs that turn learning into confidence, connection, and action.</h2>
+          <p>Use the homepage to drive traffic directly into the highest-priority actions: enroll in workshops, join community events, donate, volunteer, or partner.</p>
+          <div class="program-list">
+            <div>📌 Academic Workshop Pilot for grades 6–12</div>
+            <div>📚 Community Book Drive for Teens</div>
+            <div>🌱 Service learning and environmental field days</div>
+            <div>📝 Behind the Next Generation parent/student story series</div>
+          </div>
+        </div>
+        <aside class="program-side">
+          <h3>Spots are limited for upcoming workshops.</h3>
+          <p>Make the CTA urgent but not pushy. Parents should immediately know where to register and why it matters.</p>
+          <a class="btn btn-sun" href="https://www.inclassinc.org/academic-workshop-pilot">Enroll Now</a>
+          <a class="btn btn-ghost" href="https://www.inclassinc.org/community">Explore Community Events</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="soft" id="impact">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Proof & credibility</span>
+          <h2>Make the mission measurable.</h2>
+          <p>For Google Ad Grants traffic, this section should reduce doubt. Add real numbers as soon as Nia has them.</p>
+        </div>
+        <div class="impact-grid">
+          <div class="impact-card"><b>501(c)(3)</b><span>Public charity status builds donor trust.</span></div>
+          <div class="impact-card"><b>Treasure Coast</b><span>Local mission with community partnerships.</span></div>
+          <div class="impact-card"><b>Monthly</b><span>Community updates, stories, invites, and resources.</span></div>
+          <div class="impact-card"><b>Future home</b><span>A safe space for teens to learn, connect, and belong.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="donate">
+      <div class="container donate-band">
+        <h2>Help put support within reach for more students.</h2>
+        <p>Donors should not just see “give today.” They should understand what their gift makes possible: mentorship, workshops, book access, service opportunities, and confidence-building experiences.</p>
+        <div class="donation-options">
+          <div class="donation-option"><b>$25</b><p>Helps provide learning resources, books, and student support materials.</p></div>
+          <div class="donation-option"><b>$50</b><p>Helps support access to workshops, mentorship activities, and guided learning experiences.</p></div>
+          <div class="donation-option"><b>$100</b><p>Helps expand programming, community events, and service learning opportunities.</p></div>
+        </div>
+        <a class="btn btn-sun" href="https://www.inclassinc.org/giving">💛 Fund a Student</a>
+      </div>
+    </section>
+
+    <section class="soft" id="partners">
+      <div class="container partner-grid">
+        <article class="partner-card">
+          <h3>Partner with InCLASS to build the next generation.</h3>
+          <p>Corporate sponsors, local businesses, schools, nonprofits, print shops, and community partners can help create real access for teens across the Treasure Coast.</p>
+          <a class="btn btn-primary" href="https://www.inclassinc.org/contact">Become a Partner</a>
+        </article>
+        <article class="partner-card">
+          <h3>Volunteer, donate books, or offer in-kind support.</h3>
+          <p>Not every contribution has to be financial. InCLASS can use community support through books, spaces, services, mentorship, expertise, and event support.</p>
+          <a class="btn btn-coral" href="https://www.inclassinc.org/contact">Get Involved</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-box">
         <div>
-          <p class="eyebrow">Dining details</p>
-          <h2>Built for mood, taste, and memory.</h2>
-          <p class="section-copy" style="margin-top:24px;">Every element supports the appetite — from sauce work and service pacing to the warmth of the room.</p>
+          <span class="eyebrow">Stay connected</span>
+          <h2>Join the InCLASS community.</h2>
+          <p>Receive one thoughtful monthly update with student stories, impact updates, event invites, behind-the-scenes moments, resources, and ways to support the mission.</p>
         </div>
-        <div class="details-grid">
-          <article class="detail dark">
-            <div class="icon" aria-hidden="true"></div>
-            <h3>Classic Technique</h3>
-            <p>Stocks, reductions, beurre blanc, and sauces prepared with discipline.</p>
-          </article>
-          <article class="detail">
-            <div class="icon" aria-hidden="true"></div>
-            <h3>Curated Wine List</h3>
-            <p>European bottles selected for steak, seafood, pasta, and cream sauces.</p>
-          </article>
-          <article class="detail">
-            <div class="icon" aria-hidden="true"></div>
-            <h3>Private Events</h3>
-            <p>A polished room for birthdays, proposals, dinners, and hosted evenings.</p>
-          </article>
-          <article class="detail">
-            <div class="icon" aria-hidden="true"></div>
-            <h3>Seasonal Rhythm</h3>
-            <p>Menus shift with herbs, mushrooms, citrus, coastal seafood, and produce.</p>
-          </article>
-        </div>
+        <form class="form">
+          <input type="text" placeholder="First name" aria-label="First name">
+          <input type="text" placeholder="Last name" aria-label="Last name">
+          <input class="wide" type="email" placeholder="Email address" aria-label="Email address">
+          <button class="btn btn-primary" type="button">Join the Community</button>
+        </form>
       </div>
     </section>
-
-    <section class="events-section" id="events">
-      <div class="container">
-        <div class="events-card">
-          <div>
-            <p class="eyebrow">Private events</p>
-            <h2>Host the kind of dinner people remember.</h2>
-            <p class="section-copy" style="margin-top:24px;">From proposals and birthday dinners to corporate hosting, the room can be styled around your menu, pacing, and guest experience.</p>
-            <div class="events-list">
-              <span>Private dining for 8–42 guests</span>
-              <span>Custom chef’s tasting menus</span>
-              <span>Wine pairing and dessert service</span>
-            </div>
-          </div>
-          <div class="events-visual" role="img" aria-label="Private dining event table visual"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="reserve">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <p class="eyebrow">Reservations</p>
-            <h2>Reserve an evening at Maison Continental.</h2>
-            <p>Open daily for lunch, dinner, weekend tastings, and private dining.</p>
-          </div>
-          <div class="reserve-panel" aria-label="Reservation summary">
-            <div class="reserve-field"><span>Date</span><strong>Tonight</strong></div>
-            <div class="reserve-field"><span>Guests</span><strong>2 People</strong></div>
-            <div class="reserve-field"><span>Time</span><strong>8:30 PM</strong></div>
-            <a class="btn gold" href="mailto:reservations@example.com?subject=Reservation%20Request%20at%20Maison%20Continental">Reserve Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer" id="contact">
-      <div class="container footer-inner">
-        <p>© Maison Continental. Continental dining, private events, and cellar-led evenings.</p>
-        <div class="footer-links">
-          <a href="#menu">Menu</a>
-          <a href="#events">Events</a>
-          <a href="mailto:reservations@example.com">Contact</a>
-        </div>
-      </div>
-    </footer>
   </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#top"><span class="brand-badge">IC</span> InCLASS</a>
+        <p style="margin-top:14px;">Empowering homeschool and digital learners in grades 6–12 with life skills, academic support, leadership development, service, and mentorship.</p>
+      </div>
+      <div class="contact">
+        <p>Phone: (772) 202-9259</p>
+        <p>Email: info@inclassinc.org</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
